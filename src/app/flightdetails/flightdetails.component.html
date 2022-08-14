@@ -1,0 +1,52 @@
+<div class="container-fluid main-bc">
+  <div class="row col-md-12">
+
+    <div class="col-md-2 left-bc"><strong>Filters</strong>
+    <div>Launch Year</div>{{activeyear}}
+      <div class="row">
+      <div class="col-md-6" *ngFor="let i of yearArray"><a (click)="passYearVal(i)"  class="btn btn-primary btn-year  m-2" [ngClass]="{'active': i==activeyear}" >{{i}}</a></div>
+      </div>
+      <h6 id="year">Launch Status</h6>
+      <div class="row">
+        <div class="col-md-6">
+          <a class="btn btn-primary btn-lastatus" (click)="passLaunchStatus('true')" [ngClass]="{'active': activelaunchstatus=='true'}">True</a>
+        </div>
+        <div class="col-md-6">
+          <a class="btn btn-primary btn-lastatus" (click)="passLaunchStatus('false')" [ngClass]="{'active': activelaunchstatus=='false'}">False</a>
+        </div>
+      </div>
+
+      <h6 id="year">Land Status</h6>
+      <div class="row">
+        <div class="col-md-6">
+          <a class="btn btn-primary btn-landstatus" (click)="passLandStatus(true)" [ngClass]="{'active': activelandstatus=='true'}" >True</a>
+        </div>
+        <div class="col-md-6">
+          <a class="btn btn-primary btn-landstatus" (click)="passLandStatus(false)" [ngClass]="{'active': activelandstatus=='false'}">false</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10" *ngIf="flightData.length > 0">
+<div class="row">
+        <div class="col-md-3" *ngFor="let flight of flightData">
+          <div class="box">
+          <p class="list-group-item-dark"><img class="img-responsive" src="{{ flight.links.mission_patch }}" width="150" height="150"></p>
+          <p class="flnumber"><strong>Flight Number:</strong> {{ flight.flight_number }}</p>
+          <p><strong>Mission IDs:</strong> {{ flight.mission_id[0] }}</p>
+          <p><strong>Launch Year:</strong> {{ flight.launch_year }}</p>
+          <p><strong>Successful Launch:</strong> {{ flight.launch_success }}</p>
+          <p><strong>Successful Landing:</strong> {{ flight.rocket.first_stage.cores[0].land_success }}</p></div>
+        </div>
+</div>
+
+
+    </div>
+    <div class="col-md-10" #elseTemplate>
+      <div class="box" style="text-align: center;height:100%;vertical-align: middle;padding:100px">
+        No Flights data found
+      </div>
+    </div>
+  </div>
+
+
+</div>

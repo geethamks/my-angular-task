@@ -1,0 +1,31 @@
+.btn-year:hover, .btn-year:focus, .btn-year:active, .btn-year.active, .open>.dropdown-toggle.btn-year {
+  color: #fff;
+  background-color: #002366;
+  border-color: #285e8e; /*set the color you want here*/
+}
+.btn-lastatus:hover, .btn-lastatus:focus, .btn-lastatus:active, .btn-lastatus.active, .open>.dropdown-toggle.btn-lastatuss {
+  color: #fff;
+  background-color: #002366;
+  border-color: #285e8e; /*set the color you want here*/
+}
+.btn-landstatus:hover, .btn-landstatus:focus, .btn-landstatus:active, .btn-landstatus.active, .open>.dropdown-toggle.btn-landstatuss {
+  color: #fff;
+  background-color: #002366;
+  border-color: #285e8e; /*set the color you want here*/
+}
+.main-bc{
+  background-color: #ccc;
+}
+.left-bc{
+  background-color: #fff ;
+}
+.box{
+  background-color:#fff;
+  padding:5px;
+  margin:5px;
+  border-radius: 10px;
+}
+.list-group-item-dark{
+  text-align: center;
+}
+
